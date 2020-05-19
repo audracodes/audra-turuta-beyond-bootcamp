@@ -2,7 +2,38 @@ const quizContainer = document.getElementsByClassName('quiz');
 const submitButton = document.getElementById('submit');
 const resultsContainer = document.getElementsByClassName('results');
 
-function buildQuiz(){};
+function buildQuiz(){
+    // Storing the html output of the questions
+    const output = [];
+    // Going over each question
+    teaQuestions.forEach( (currentQuestion, questionNumber) => {
+        // Storing the possible answers
+        const answers = [];
+
+        for (letter in currentQuestion.answers) {
+            // Adding the radio buttons
+            answers.push(
+                `<label>
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                    ${letter}: 
+                    ${currentQuestion.answers[letter]}
+                </label>`
+            );
+        }
+
+        // Add the question and answers to the html output
+        output.push(
+            // ! Check if we're allowed to use .join, make sure it's up-to-date
+            `<div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>`
+        );
+    });
+
+    // Combine the buttons, questions, and potential answers into one div in the html
+    // ! Check on innerHTML and .join, make sure they're up-to-date
+    quizContainer.innerHTML = output.join("");
+    
+};
 function showResults(){};
 
 // Display Quiz 
