@@ -22,7 +22,21 @@ form.addEventListener('submit', (e) =>{
     const userFeeling = document.querySelector('input[name="feeling"]:checked').value;
     
     const userSeason = document.querySelector('input[name="season"]:checked').value;
-    console.log(userCaffeine, userFeeling, userSeason);
+
+    let yourTea = null; 
+
+    // Find the type of tea
+    const findTea = function () {
+        if (userCaffeine === 'love-it' || userCaffeine === 'i-am-indifferent') {
+            // continue with black/green logic
+        } else {
+            yourTea = 'herbal';
+        }
+    }
+    
+    findTea();
+    alert(yourTea);
+
 
 });
 
