@@ -73,7 +73,7 @@ form.addEventListener('submit', (e) =>{
 // prevent default
 // check for answers
 // store inputs
-//! compare them to the tea types
+// compare them to the tea types
 //! pick the tea
 //! display the correct tea type
 
