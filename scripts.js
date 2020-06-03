@@ -2,6 +2,15 @@
 
 // Storing the form in a variable
 const form = document.querySelector('form');
+// Storing the reset button in a variable
+const reset = document.getElementById('reset');
+// Storing the submit button in a variable
+const submit = document.getElementById('submit');
+// Storing the results in variables
+const element = document.getElementById('results');
+const blackTea = document.getElementById('black');
+const greenTea = document.getElementById('green');
+const herbalTea = document.getElementById('herbal');
 // Putting the final tea choice in a global variable
 let yourTea = null; 
 
@@ -13,13 +22,9 @@ const checkInputs = function () {
     };
 };
 
+// Show the results title
 const showResults = function () {
     // Storing results in variables
-    const element = document.getElementById('results');
-    const blackTea = document.getElementById('black');
-    const greenTea = document.getElementById('green');
-    const herbalTea = document.getElementById('herbal');
-    // Show the results title
     element.classList.remove('visuallyHidden');
     // Show the tea type
     if (yourTea === 'black') {
@@ -43,7 +48,6 @@ form.addEventListener('submit', (e) =>{
     const userFeeling = document.querySelector('input[name="feeling"]:checked').value;
     
     const userSeason = document.querySelector('input[name="season"]:checked').value;
-
 
     // Find the type of tea
     const findTea = function () {
@@ -84,7 +88,19 @@ form.addEventListener('submit', (e) =>{
     
     findTea();
     showResults();
+    submit.classList.add('visuallyHidden');
 });
 
-
-
+// On Reset
+reset.addEventListener('click', function () {
+    const hideResults = function () {
+        // Hide the results title
+        element.classList.add('visuallyHidden');
+        // Hide the tea type
+        blackTea.classList.add('visuallyHidden');
+        greenTea.classList.add('visuallyHidden');
+        herbalTea.classList.add('visuallyHidden');
+    };
+    hideResults();
+    submit.classList.remove('visuallyHidden');
+});
