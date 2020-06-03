@@ -5,24 +5,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tea Time</title>
+    <!-- css style sheet
+    google fonts if you use them
+    font awesome toolkit if you use it
+    favicon because bitch you always need a favicon -->
 </head>
 <body>
+    <a href="#maincontent" class="skip-link">Skip to main content</a>
     <header>
         <h1>Tea Time</h1>
         <h3>Pick your mood, get a cup of tea</h3>
     </header>
 
     <main>
-        <div class="quiz">
+        <div>
+            <form action="" id="form">
+                <!-- Question One -->
+                <fieldset id="caffeine">
+                    <h3>How do you feel about caffeine?</h3>
+                    <ul>
+                        <li class="tea-ans">
+                            <input id="love-it" class="option"
+                            type="radio"
+                            name="caffeine"
+                            value="love-it"
+                            aria-checked="false">
+                            <label for="love-it">Love it!</label>
+                        </li>
 
+                        <li class="tea-ans">
+                                <input id="no-thanks" class="option"
+                                type="radio"
+                                name="caffeine"
+                                value="no-thanks"
+                                aria-checked="false">
+                                <label for="no-thanks"> No thanks!</label>
+                            </li>
+                        
+                        <li class="tea-ans">
+                            <input id="i-am-indifferent" class="option"
+                            type="radio"
+                            name="caffeine"
+                            value="i-am-indifferent"
+                            aria-checked="false">
+                            <label for="i-am-indifferent">I'm indifferent.</label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <!-- Question 2 -->
+                <fieldset id="feeling">
+                    <h3>How are you feeling?</h3>
+                    <ul>
+                        <li class="tea-ans">
+                            <input id="excited" class="option"
+                            type="radio"
+                            name="feeling"
+                            value="excited"
+                            aria-checked="false">
+                            <label for="excited">Excited</label>
+                        </li>
+
+                        <li class="tea-ans">
+                                <input id="regal" class="option"
+                                type="radio"
+                                name="feeling"
+                                value="regal"
+                                aria-checked="false">
+                                <label for="regal">Regal</label>
+                            </li>
+                        
+                        <li class="tea-ans">
+                            <input id="calm" class="option"
+                            type="radio"
+                            name="feeling"
+                            value="calm"
+                            aria-checked="false">
+                            <label for="calm">Calm</label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <!-- Question 3 -->
+                <fieldset id="season">
+                    <h3>What is your favourite season?</h3>
+                    <ul>
+                        <li class="tea-ans">
+                            <input id="spring-summer" class="option"
+                            type="radio"
+                            name="season"
+                            value="spring-summer"
+                            aria-checked="false">
+                            <label for="spring-summer">Spring or Summer</label>
+                        </li>
+
+                        <li class="tea-ans">
+                                <input id="fall" class="option"
+                                type="radio"
+                                name="season"
+                                value="fall"
+                                aria-checked="false">
+                                <label for="fall">Fall</label>
+                            </li>
+                        
+                        <li class="tea-ans">
+                            <input id="winter" class="option"
+                            type="radio"
+                            name="season"
+                            value="winter"
+                            aria-checked="false">
+                            <label for="winter">Winter</label>
+                        </li>
+                    </ul>
+                </fieldset>
+
+                <button id="submit" type="submit">What tea should I have?</button>
+            </form>
         </div>
+        <!-- Results -->
+        <div>
+            <h2>Try this tea today!</h2>
 
-        <div class="button-div">
-            <button id="submit">Give me the tea!</button>
-        </div>
+            <div>
+                <h3>Black Tea</h3>
+                <p>Classic and caffeinated. A cup of black tea is just what you need to keep yourself going today.</p>
+            </div>
 
-        <div class="results">
+            <div>
+                <h3>Green Tea</h3>
+                <p>The perfect mix of caffeine and calm. May we suggest a peach green tea?</p>
+            </div>
 
+            <div>
+                <h3>Herbal Tea</h3>
+                <p>Herbal tea can be calming, flavourful, and comes in many different varities. Camomile for when you can't sleep, peppermint and ginger for stomachaches, and citrus for when you need a kick.</p>
+            </div>
         </div>
     </main>
 
@@ -30,6 +147,7 @@
         <h6>&copy; Audra Codes 2020</h6>
     </footer>
 
-    <script src="scripts.js"></script>
+    <script src="./scripts.js"></script>
+
 </body>
 </html>
