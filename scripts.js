@@ -6,8 +6,6 @@ const form = document.querySelector('form');
 const reset = document.getElementById('reset');
 // Storing the submit button in a variable
 const submit = document.getElementById('submit');
-// Storing the results in variables
-const element = document.getElementById('results');
 const blackTea = document.getElementById('black');
 const greenTea = document.getElementById('green');
 const herbalTea = document.getElementById('herbal');
@@ -18,14 +16,12 @@ let yourTea = null;
 const checkInputs = function () {
     // Ensures there's an input for each question
     if (document.querySelector('input[name="caffeine"]:checked') === null || document.querySelector('input[name="feeling"]:checked') === null || document.querySelector('input[name="season"]:checked') === null) {
-        alert('Please pick');
+        alert('Please select an answer for each question.');
     };
 };
 
 // Show the results title
 const showResults = function () {
-    // Storing results in variables
-    element.classList.remove('visuallyHidden');
     // Show the tea type
     if (yourTea === 'black') {
         blackTea.classList.remove('visuallyHidden');
@@ -94,8 +90,6 @@ form.addEventListener('submit', (e) =>{
 // On Reset
 reset.addEventListener('click', function () {
     const hideResults = function () {
-        // Hide the results title
-        element.classList.add('visuallyHidden');
         // Hide the tea type
         blackTea.classList.add('visuallyHidden');
         greenTea.classList.add('visuallyHidden');
