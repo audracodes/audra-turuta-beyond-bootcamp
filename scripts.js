@@ -43,7 +43,19 @@ form.addEventListener('submit', (e) =>{
                    };
                };
            } else {
-            //    i like caffeine logic
+               if (userFeeling === 'regal' || userFeeling === 'calm') {
+                   if (userSeason === 'fall' || userSeason === 'spring-summer') {
+                       yourTea = 'black';
+                   } else {
+                       yourTea = 'green';
+                   };
+               } else {
+                   if (userSeason === 'fall' || userSeason === 'spring-summer') {
+                       yourTea = 'green';
+                   } else {
+                       yourTea = 'black';
+                   }
+               };
            };
         } else {
             yourTea = 'herbal';
