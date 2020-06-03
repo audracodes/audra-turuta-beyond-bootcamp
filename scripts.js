@@ -28,11 +28,27 @@ form.addEventListener('submit', (e) =>{
     // Find the type of tea
     const findTea = function () {
         if (userCaffeine === 'love-it' || userCaffeine === 'i-am-indifferent') {
-            // continue with black/green logic
+           if (userCaffeine === 'i-am-indifferent') {
+               if (userFeeling === 'calm' || userFeeling === 'regal') {
+                   if (userSeason === 'fall' || userSeason === 'spring-summer') {
+                       yourTea = 'green';
+                   } else {
+                       yourTea = 'black';
+                   };
+               } else {
+                   if (userSeason === 'fall') {
+                       yourTea = 'green';
+                   } else {
+                       yourTea = 'black';
+                   };
+               };
+           } else {
+            //    i like caffeine logic
+           };
         } else {
             yourTea = 'herbal';
-        }
-    }
+        };
+    };
     
     findTea();
     alert(yourTea);
