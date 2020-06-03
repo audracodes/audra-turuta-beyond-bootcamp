@@ -2,15 +2,36 @@
 
 // Storing the form in a variable
 const form = document.querySelector('form');
+// Putting the final tea choice in a global variable
+let yourTea = null; 
 
 // Functions
 const checkInputs = function () {
+    // Ensures there's an input for each question
     if (document.querySelector('input[name="caffeine"]:checked') === null || document.querySelector('input[name="feeling"]:checked') === null || document.querySelector('input[name="season"]:checked') === null) {
         alert('Please pick');
-    }
+    };
 };
 
-// Sumbitting the form
+const showResults = function () {
+    // Storing results in variables
+    const element = document.getElementById('results');
+    const blackTea = document.getElementById('black');
+    const greenTea = document.getElementById('green');
+    const herbalTea = document.getElementById('herbal');
+    // Show the results title
+    element.classList.remove('visuallyHidden');
+    // Show the tea type
+    if (yourTea === 'black') {
+        blackTea.classList.remove('visuallyHidden');
+    } else if (yourTea === 'green') {
+        greenTea.classList.remove('visuallyHidden');
+    } else {
+        herbalTea.classList.remove('visuallyHidden');
+    };
+};
+
+// Sumbit the form
 form.addEventListener('submit', (e) =>{ 
     // Prevent Default Submit
     e.preventDefault();
@@ -23,7 +44,6 @@ form.addEventListener('submit', (e) =>{
     
     const userSeason = document.querySelector('input[name="season"]:checked').value;
 
-    let yourTea = null; 
 
     // Find the type of tea
     const findTea = function () {
@@ -63,17 +83,8 @@ form.addEventListener('submit', (e) =>{
     };
     
     findTea();
-    alert(yourTea);
-
-
+    showResults();
 });
 
-//! hide the tea types
-// user clicks submit
-// prevent default
-// check for answers
-// store inputs
-// compare them to the tea types
-//! pick the tea
-//! display the correct tea type
+
 

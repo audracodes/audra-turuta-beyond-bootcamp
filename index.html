@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Tea Time</title>
-    <!-- css style sheet
+    <link rel="stylesheet" href="./styles/style.css">
+    <!-- 
     google fonts if you use them
     font awesome toolkit if you use it
     favicon because bitch you always need a favicon -->
 </head>
 <body>
-    <a href="#maincontent" class="skip-link">Skip to main content</a>
+    <a href="#maincontent" class="visuallyHidden">Skip to main content</a>
     <header>
         <h1>Tea Time</h1>
         <h3>Pick your mood, get a cup of tea</h3>
@@ -124,19 +125,19 @@
         </div>
         <!-- Results -->
         <div>
-            <h2>Try this tea today!</h2>
+            <h2 class="results-title hide" id="results">Try this tea today!</h2>
 
-            <div>
+            <div class="visuallyHidden" id="black">
                 <h3>Black Tea</h3>
                 <p>Classic and caffeinated. A cup of black tea is just what you need to keep yourself going today.</p>
             </div>
 
-            <div>
+            <div class="visuallyHidden" id="green">
                 <h3>Green Tea</h3>
                 <p>The perfect mix of caffeine and calm. May we suggest a peach green tea?</p>
             </div>
 
-            <div>
+            <div class="visuallyHidden" id="herbal">
                 <h3>Herbal Tea</h3>
                 <p>Herbal tea can be calming, flavourful, and comes in many different varities. Camomile for when you can't sleep, peppermint and ginger for stomachaches, and citrus for when you need a kick.</p>
             </div>
